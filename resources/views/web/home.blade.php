@@ -98,18 +98,20 @@
         </div>
     </div>
     <div class="container-fourbox">
-        <h1>Bài viết sản phẩm</h1>
-        <div class="cards">
+    <h1>Bài viết sản phẩm</h1>
+    <div class="cards">
         @foreach($service as $service) <!-- Lặp qua từng sản phẩm -->
-                <div class="card">
+            <div class="card">
                 <a href="{{ route('webservices.show', $service->id) }}"> <!-- Thay đổi route theo tên route của bạn -->
-                <h2>{{ $service->title }}</h2>
-                        <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}">
+                    <h3>{{ $service->title }}</h3>
+                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}">
+                    <p>{!! Str::limit($service->content, 100) !!} </p> <!-- Giới hạn nội dung xuống 100 chữ -->
                 </a>       
-                </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
+</div>
+
   
     <!-- /.container -->
     <section class="contact-section">
@@ -169,8 +171,8 @@
                             <div class="news-page-item card">
                                 <img class="card-img-top" src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                                 <div class="card-body">
-                                    <div class="news-page-title card-title h5">{{ $news->title }}</div>
-                                    <p class="news-page-text card-text">{{ Str::limit($news->content, 100) }}</p> 
+                                    <div class="news-page-title card-title h5">{!! Str::limit($news->title, 30) !!}</div>
+                                    <p class="news-page-text card-text">{{ Str::limit($news->content, 200) }}</p> 
                                     <a href="{{ route('webnew.show', $news->id) }}" class="btn btn-primary">Xem thêm</a> 
                                 </div>
                             </div>
@@ -179,6 +181,40 @@
                 </div>
             </section>
         </div>
+</div>
+
+<div class="container-feedback">
+    <h2>Đánh Giá Sản Phẩm</h2>
+    <p>Hãy cho chúng tôi biết trang web cần cải thiện và bạn không hài lòng ở điểm nào.</p>
+    <form action="{{ route('feedback.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="review">Nội dung đánh giá:</label>
+            <textarea class="form-control" id="review" name="review" rows="5" placeholder="Nhập đánh giá của bạn" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Đánh giá:</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" required />
+                <label for="star5" title="5 sao">★</label>
+
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="4 sao">★</label>
+
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="3 sao">★</label>
+
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="2 sao">★</label>
+
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="1 sao">★</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Gửi đánh giá</button>
+    </form> 
 </div>
 
 

@@ -14,6 +14,8 @@ use App\Http\Controllers\web\WebHomeController;
 use App\Http\Controllers\web\WebNewController;
 use App\Http\Controllers\NewController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ReviewController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -75,7 +77,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/new/{id}', [NewController::class, 'edit'])->name('new.edit');
 	Route::put('/new/{id}', [NewController::class, 'update'])->name('new.update');
 	Route::delete('new/{id}', [NewController::class, 'destroy'])->name('new.destroy');
-	
+	Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+
 
 
 
@@ -100,6 +103,7 @@ Route::get('/login', function () {
 // web
 Route::get('/trangchu', [WebHomeController::class, 'create'])->name('index');
 Route::post('/contact', [WebHomeController::class, 'store'])->name('contacts.store');
+Route::post('/feedback', [WebHomeController::class, 'review'])->name('feedback.store');
 
 
 Route::get('/tintuc', [WebNewController::class, 'index'])->name('webnew.index');

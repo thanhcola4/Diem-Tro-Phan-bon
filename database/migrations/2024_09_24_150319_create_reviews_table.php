@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contract', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->bigInteger('phone');
-            $table->string('email');
-            $table->string('note');
-            $table->timestamps();
+            $table->text('content'); // Nội dung đánh giá
+            $table->integer('rating'); // Mức độ đánh giá (1-5)
+            $table->timestamps(); // Các trường created_at và updated_at
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contract');
+        Schema::dropIfExists('reviews');
     }
 };

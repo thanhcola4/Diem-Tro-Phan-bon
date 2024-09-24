@@ -19,7 +19,7 @@
         <!-- Nội dung sản phẩm -->
         <div class="form-group">
             <label for="content">Nội Dung:</label>
-            <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+            <textarea class="form-control" id="content" name="content" rows="5"></textarea>
         </div>
 
         <!-- Chọn ảnh -->

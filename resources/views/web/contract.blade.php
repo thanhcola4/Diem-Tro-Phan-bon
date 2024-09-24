@@ -5,22 +5,15 @@
     <div class="full-title">
         <div class="container">
             <!-- Page Heading/Breadcrumbs -->
-            <h1 class="mt-4 mb-3">Contact
-              <small>Subheading</small>
+            <h1 class="mt-4 mb-3">LIÊN HỆ
+              
             </h1>
         </div>
     </div>
 
     <!-- Page Content -->
     <div class="container">
-        <div class="breadcrumb-main">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item active">Contact</li>
-            </ol>
-        </div>
+        
 
         <!-- Content Row -->
         <div class="row">

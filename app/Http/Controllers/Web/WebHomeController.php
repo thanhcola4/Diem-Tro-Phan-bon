@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Models\Services;
 use App\Models\News;
+use App\Models\Review;
+
 use App\Models\Contact;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
@@ -35,4 +37,20 @@ class WebHomeController extends Controller
             // Redirect hoặc thông báo thành công
             return redirect()->back()->with('success', 'Thông tin liên hệ đã được gửi!');
         }
+        public function review(Request $request)
+{
+    // Xác thực dữ liệu
+    $request->validate([
+        'review' => 'required|string',
+        'rating' => 'required|integer|min:1|max:5',
+    ]);
+
+    // Tạo đánh giá mới
+    $review = Review::create([
+        'content' => $request->review,
+        'rating' => $request->rating,
+    ]);
+    return redirect()->back()->with('success', 'Cảm ơn bạn đã gửi đánh giá!');
+}
+
 }

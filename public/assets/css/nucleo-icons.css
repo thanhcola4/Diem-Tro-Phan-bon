@@ -606,5 +606,20 @@ License - nucleoapp.com/license/
     object-fit: cover; /* Cắt ảnh để giữ tỷ lệ và điền vào không gian */
     border-radius: 5px; /* Tùy chọn: bo góc cho ảnh */
 }
-
+.star-rating {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.star-rating input {
+  display: none;
+}
+.star-rating label {
+  font-size: 1.5em; /* Tăng kích thước ngôi sao */
+  color: #ddd;
+  cursor: pointer;
+}
+.star-rating input:checked ~ label {
+  color: #f39c12; /* Màu ngôi sao được chọn */
+}
 /* all icon font classes list here */

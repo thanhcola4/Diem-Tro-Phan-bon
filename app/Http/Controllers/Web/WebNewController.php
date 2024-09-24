@@ -9,7 +9,7 @@ class WebNewController extends Controller
 {
     public function index()
     {
-        $newsItems = News::all();
+        $newsItems = News::paginate(3);
         return view ('web.news', compact('newsItems'));
     }
     public function shownews($id)
