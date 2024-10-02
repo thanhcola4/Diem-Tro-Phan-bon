@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800');
  
 body {
+	font-family: 'Times New Roman', Times, serif;
   padding-top: 54px;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
@@ -53,7 +54,7 @@ button.btn-secondary:hover{
 }
 
 .top-nav{
-	background-color: #ffffff !important;
+	background-color: #C8E6C9 !important;
 }
 .navbar-expand-lg.top-nav .navbar-nav .nav-link{
 	padding: 10px 15px;
@@ -156,11 +157,11 @@ button.btn-secondary:hover{
 	font-weight: bold;
 }
 .services-bar .card .card-footer{
-	background-color: #4e3914;
+	background-color: #f5f5f5;
 }
 
 .about-main{
-	padding: 100px 0px;
+	padding: 50px 0px;
 }
 .about-main h2{
 	font-size: 40px;
@@ -246,20 +247,21 @@ button.btn-secondary:hover{
 }
 
 .footer { 
+	margin-top: 50px;
 	width:100%; 
-	background-color:#263238; 
+	background-color:#C8E6C9; 
 	min-height:250px; 
 	padding:10px 0px 25px 0px;
 	}
 .pt2 { 
 	padding-top:40px ;
 	margin-bottom:20px ;
-	color: #ffffff;
+	color: #144e23;
 	font-weight: 500;
 	}
 footer p { 
 	font-size:13px; 
-	color:#CCC; 
+	color:#144e23; 
 	padding-bottom:0px; 
 	margin-bottom:8px;
 	}
@@ -276,12 +278,12 @@ footer p {
 	padding:0px 0px 5px 0px;
 	}
 .footer_ul_amrc li a{ 
-	color:#cccccc;
+	color:#144e23;
 	font-size: 14px;
 	font-weight: 300;
 	}
 .footer_ul_amrc li a:hover{ 
-	color:#fff; 
+	color:#144e23; 
 	text-decoration:none;
 	}
 .footer_ul_amrc li .media-left{
@@ -293,7 +295,7 @@ footer p {
 .footer_ul_amrc li .media-body p{
 	font-size: 14px;
 	font-weight: 500;
-	color: #ffffff;
+	color: #144e23;
 }
 .footer_ul_amrc li .media-body span{
 	color: #cccccc;
@@ -991,9 +993,10 @@ Giỏ Hàng
 /* Phần bố cục và thẻ card */
 .container-fourbox {
     text-align: center;
-    padding: 50px;
     max-width: 90%; /* Đặt giới hạn chiều rộng cho container */
-    margin: 0 auto; /* Căn giữa container trên màn hình */
+	margin-left: 500px;
+	margin-right: 500px;
+
 }
 
 .container-fourbox h1 {
@@ -1017,9 +1020,9 @@ Giỏ Hàng
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 23%; /* Điều chỉnh lại chiều rộng của card */
     text-align: center;
-    padding: 20px; /* Tăng padding để tạo thêm không gian */
+    padding: 10px; /* Tăng padding để tạo thêm không gian */
     transition: transform 0.3s ease;
-    min-height: 200px; /* Đảm bảo thẻ có chiều cao tối thiểu */
+    min-height: 400px; /* Đảm bảo thẻ có chiều cao tối thiểu */
     display: flex;
     flex-direction: column;
     align-items: center; /* Đảm bảo căn giữa nội dung theo chiều ngang */
@@ -1193,6 +1196,8 @@ Giỏ Hàng
     flex-wrap: wrap;
     justify-content: space-between;
 	align-items: flex-start; /* Căn chỉnh các khung về đầu trang */
+	margin-left: 450px;
+	margin-right: 450px;
 
 }
 .news-page-text {
@@ -1426,16 +1431,11 @@ Giỏ Hàng
 	border-color: #00ff2a; /* Màu viền nút khi hover */
 }
 
-body {
-	background-color: #e0f7fa; /* Màu nền xanh nhạt */
-	font-family: Arial, sans-serif;
-	padding: 20px;
-}
 
 .container-feedback {
 	max-width: 50%;
 	margin: 0 auto;
-	padding: 20px;
+	padding-bottom: 20px;
 	background-color: #ffffff; /* Màu nền form */
 	border: 2px solid #00796b; /* Khung màu xanh đậm */
 	border-radius: 40px; /* Bo tròn khung */
@@ -1503,4 +1503,98 @@ body {
 	width: 100%;
 	padding: 0.75rem;
 	font-size: 20px;
+}
+  /* Background của phần feedback */
+  .feedback-background {
+	background: url('/images/background-feedback.jpg');
+	background-size: cover;
+	min-height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	background-position: center; /* Canh giữa hình nền */
+    background-repeat: no-repeat; /* Không lặp lại hình nền */
+    background-attachment: fixed; /* Cố định hình nền khi cuộn trang */
+}
+
+/* Khung chứa feedback */
+.feedback-background .container-feedback-slider {
+	background-color: rgba(255, 255, 255, 0.9); /* Khung feedback có nền trắng, trong suốt */
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	max-width: 1000px;
+	width: 100%;
+	text-align: center;
+	
+}
+
+.feedback-background .feedback-slider {
+	margin-top: 20px;
+}
+
+.feedback-background .review-item {
+	padding: 20px;
+}
+
+.feedback-background .review-icon {
+	font-size: 50px;
+	color: #4caf50; /* Icon màu xanh cây */
+	margin-bottom: 20px;
+}
+
+.feedback-background .review-content {
+	font-size: 16px;
+	color: #333;
+}
+
+.feedback-background .rating {
+	color: #ffcc00;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+.feedback-background .star {
+	font-size: 20px;
+	color: #ddd;
+}
+
+.feedback-background .star.filled {
+	color: #ffcc00;
+}
+
+/* Slick Slider custom styling */
+.slick-prev, .slick-next {
+    background-color: #4caf50 !important; /* Màu nền mũi tên (xanh cây), sử dụng !important để ghi đè */
+    border: none;
+    color: #fff !important; /* Màu chữ mũi tên */
+    font-size: 30px !important; /* Kích thước mũi tên */
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    opacity: 1;
+}
+
+/* Vị trí của mũi tên */
+.feedback-background .slick-prev {
+    left: -10px !important; /* Vị trí mũi tên trái */
+}
+
+.feedback-background .slick-next {
+    right: -10px !important; /* Vị trí mũi tên phải */
+}
+
+/* Hiệu ứng hover cho mũi tên */
+.feedback-background .slick-prev:hover, .slick-next:hover {
+    background-color: #388e3c !important; /* Thay đổi màu khi hover */
+}
+
+.feedback-background .slick-prev:focus, .slick-next:focus {
+	outline: none; /* Loại bỏ viền khi focus */
 }

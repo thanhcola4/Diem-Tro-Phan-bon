@@ -1,13 +1,13 @@
-@extends('layouts.user_type.auth')
+<!-- @extends('layouts.user_type.auth') -->
 
-@section('content')
-<div class="container">
-    <h2>Dashboard</h2>
+<!-- @section('content') -->
+<!-- <div class="container">
+    <h2>Dashboard</h2> -->
 
     
 
         <!-- Yêu cầu hỗ trợ -->
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <h4>Yêu Cầu Hỗ Trợ</h4>
             @if($supportRequests->isEmpty())
                 <p>Không có yêu cầu hỗ trợ nào.</p>
@@ -23,10 +23,10 @@
                     @endforeach
                 </ul>
             @endif
-        </div>
+        </div> -->
 
         <!-- Sản phẩm mới -->
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <h4>Sản Phẩm Mới</h4>
             @if($recentServices->isEmpty())
                 <p>Không có sản phẩm mới nào.</p>
@@ -44,7 +44,7 @@
                     @endforeach
                 </ul>
             @endif
-        </div>
-    </div>
+        </div> -->
+    <!-- </div>
 </div>
-@endsection
+@endsection -->
