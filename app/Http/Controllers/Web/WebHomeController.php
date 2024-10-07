@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Services;
 use App\Models\News;
 use App\Models\Review;
-
+use App\Models\SiteStatistics;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
@@ -15,6 +15,17 @@ class WebHomeController extends Controller
 {
         public function create()
         {
+                    // Kiểm tra xem liệu có bản ghi thống kê nào chưa
+            $stats = SiteStatistics::first();
+            
+            if ($stats) {
+                // Nếu đã có, tăng lượt truy cập lên 1
+                $stats->views = $stats->views + 1;
+                $stats->save();
+            } else {
+                // Nếu chưa có bản ghi nào, tạo mới và tăng lượt truy cập
+                SiteStatistics::create(['views' => 1]);
+            }
             $newsItems = News::all();
             $service = Services::all();
             $reviews = Review::all();

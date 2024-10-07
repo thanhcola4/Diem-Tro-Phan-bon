@@ -5,6 +5,9 @@ use App\Models\Contract;
 use App\Models\Review;
 use App\Models\Contact;
 use App\Models\User;
+use App\Models\Services;
+use App\Models\News;
+Use App\Models\SiteStatistics;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,7 +18,11 @@ class HomeController extends Controller
     $TotalReviews = Review::count();
     $TotalOrders = Contact::count();
     $TotalUsers = User::count();
-    return view('dashboard', compact( 'TotalContacts','TotalReviews','TotalOrders','TotalUsers'));
+    $TotalViews = Services::sum('views');
+    $TotalNews = News::sum('views');
+    $stats = SiteStatistics::first();
+
+    return view('dashboard', compact( 'TotalContacts','TotalReviews','TotalOrders','TotalUsers','TotalViews','TotalNews','stats'));
     }
     
 }

@@ -98,16 +98,7 @@
         </div>
     </div>
 
-    <div class="container-fourbox">
-    <h1>BÀI VIẾT SẢN PHẨM</h1>
-    <div class="cards">
-        @foreach($service as $service) <!-- Lặp qua từng sản phẩm -->
-            <div class="card">
-                <a href="{{ route('webservices.show', $service->id) }}"> <!-- Thay đổi route theo tên route của bạn -->
-                    <h3>{{ $service->title }}</h3>
-                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}">
-                    <p>{!! Str::limit($service->content, 100) !!} </p> <!-- Giới hạn nội dung xuống 100 chữ -->
-                </a>       
+   
     <div class="container-new">
         <div class="news-table">
             <div class="title">

@@ -29,6 +29,10 @@ class WebServicesController extends Controller
     public function show($id)
     {
         $service = Services::findOrFail($id);
+            // Tăng lượt truy cập
+        $service->views = $service->views + 1;
+        $service->save();  // Lưu lại lượt truy cập
+
         return view('web.show', compact('service'));
     }
 }

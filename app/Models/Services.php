@@ -8,7 +8,7 @@ use App\Models\Order;
 
 class Services extends Model
 {
-    protected $fillable = ['title', 'content', 'image'];
+    protected $fillable = ['title', 'content', 'image', 'views'];
 
    
     

@@ -11,7 +11,8 @@ class NewController extends Controller
     {
         // Không còn lọc theo danh mục vì đã xoá trường 'category'
         $new = News::all(); // Lấy tất cả dịch vụ/sản phẩm
-        
+        $new->views = $new->views + 1;
+        $new->save();  // Lưu lại lượt truy cập
         return view('laravel-examples.new-management', compact('new'));
     }
 
