@@ -97,6 +97,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fourbox">
     <h1>BÀI VIẾT SẢN PHẨM</h1>
     <div class="cards">
@@ -107,9 +108,29 @@
                     <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}">
                     <p>{!! Str::limit($service->content, 100) !!} </p> <!-- Giới hạn nội dung xuống 100 chữ -->
                 </a>       
+    <div class="container-new">
+        <div class="news-table">
+            <div class="title">
+                <h2>BÀI VIẾT SẢN PHẨM</h2>
             </div>
-        @endforeach
-    </div>
+            <section class="news-page">
+                <div class="news-page-container container-fluid">
+                    <div class="news-page-slider slick-slider">
+                        @foreach ($service as $service)
+                            <div class="news-page-item card">
+                                <img class="card-img-top" src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}">
+                                <div class="card-body">
+                                    <div class="news-page-title card-title h5">{!! Str::limit($service->title, 30) !!}</div>
+                                    <p class="news-page-text card-text">{!! Str::limit(strip_tags($service->content), 200) !!}
+                                    </p> 
+                                    <a href="{{ route('webservices.show', $service->id) }}" class="btn btn-primary">Xem thêm</a> 
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        </div>
 </div>
 
   
@@ -171,8 +192,8 @@
                             <div class="news-page-item card">
                                 <img class="card-img-top" src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}">
                                 <div class="card-body">
-                                    <div class="news-page-title card-title h5">{!! Str::limit($news->title, 30) !!}</div>
-                                    <p class="news-page-text card-text">{{ Str::limit($news->content, 200) }}</p> 
+                                    <div class="news-page-title card-title h5">{!! Str::limit($news->title, 20) !!}</div>
+                                    <p class="news-page-text card-text">{!! Str::limit(strip_tags($news->content), 200) !!}</p> 
                                     <a href="{{ route('webnew.show', $news->id) }}" class="btn btn-primary">Xem thêm</a> 
                                 </div>
                             </div>
@@ -217,53 +238,35 @@
     </form> 
 </div>
 
+<div class="feedback-background">
+    <div class="container-feedback-slider">
+        <h2>Phản Hồi Khách Hàng</h2>
+        
+        <div class="feedback-slider">
+            @foreach($reviews as $review)
+                <div class="review-item">
+                    <div class="review-icon">
+                        <i class="fas fa-user-circle"></i> <!-- Icon của khách hàng -->
+                    </div>
 
-<div class="container text-center mt-4">
-    <button class="button-85" role="button" data-bs-toggle="modal" data-bs-target="#contactModal">ĐẶT MUA</button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modal-content-contact">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">Thông Tin Liên Hệ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="review-content">
+                        <p>{{ $review->content }}</p> <!-- Nội dung đánh giá -->
+                        
+                        <div class="rating">
+                            @for($i = 1; $i <= 5; $i++)
+                                @if($i <= $review->rating)
+                                    <span class="star filled">★</span> <!-- Sao được đánh giá -->
+                                @else
+                                    <span class="star">★</span> <!-- Sao trống -->
+                                @endif
+                            @endfor
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form id="contactForm" action="{{ route('contacts.store') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Họ và Tên</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Số điện thoại</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="address" class="form-label">Địa chỉ</label>
-                            <input type="text" class="form-control" id="address" name="address">
-                        </div>
-                        <div class="mb-3">
-                            <label for="company" class="form-label">Công ty</label>
-                            <input type="text" class="form-control" id="company" name="company">
-                        </div>
-                        <div class="mb-3">
-                            <label for="content" class="form-label">Vài lời nhắn nhủ</label>
-                            <textarea class="form-control" id="content" name="content"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Đặt Mua</button>
-                    </form>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
-
 
     <!--footer starts from here-->
  

@@ -17,7 +17,8 @@ class WebHomeController extends Controller
         {
             $newsItems = News::all();
             $service = Services::all();
-            return view('web.home',compact('service','newsItems'));
+            $reviews = Review::all();
+            return view('web.home',compact('service','newsItems','reviews'));
         }
         public function store(Request $request)
         {
