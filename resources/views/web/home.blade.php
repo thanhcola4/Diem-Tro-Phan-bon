@@ -98,7 +98,7 @@
         </div>
     </div>
     <div class="container-fourbox">
-    <h1>Bài viết sản phẩm</h1>
+    <h1>BÀI VIẾT SẢN PHẨM</h1>
     <div class="cards">
         @foreach($service as $service) <!-- Lặp qua từng sản phẩm -->
             <div class="card">
@@ -119,7 +119,7 @@
             <div class="row">
                 <!-- Contact Form on the left -->
                 <div class="col-lg-6 contact-left">
-                    <h3>Liên hệ chúng tôi</h3>
+                    <h3>LIÊN HỆ CHÚNG TÔI</h3>
                     <form action="{{ route('contract.store') }}" method="POST">
                         @csrf
                         <div class="control-group form-group">
@@ -184,7 +184,7 @@
 </div>
 
 <div class="container-feedback">
-    <h2>Đánh Giá Sản Phẩm</h2>
+    <h2>ĐÁNH GIÁ SẢN PHẨM</h2>
     <p>Hãy cho chúng tôi biết trang web cần cải thiện và bạn không hài lòng ở điểm nào.</p>
     <form action="{{ route('feedback.store') }}" method="POST">
         @csrf
