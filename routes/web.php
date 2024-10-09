@@ -78,7 +78,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('/new/{id}', [NewController::class, 'update'])->name('new.update');
 	Route::delete('new/{id}', [NewController::class, 'destroy'])->name('new.destroy');
 	Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
-
+	Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
+	Route::post('/contacts/process/{id}', [ContactController::class, 'process'])->name('contacts.process');
+	Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
 
 
@@ -122,9 +124,6 @@ Route::get('/baiviet', [WebServicesController::class, 'create'])->name('webservi
 Route::get('/baiviet/{id}', [WebServicesController::class, 'show'])->name('webservices.show');
 
 
-Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
 
-Route::post('/contacts/process/{id}', [ContactController::class, 'process'])->name('contacts.process');
-Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
 
 

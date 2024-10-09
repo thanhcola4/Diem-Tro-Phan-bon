@@ -21,7 +21,13 @@ class ContactController extends Controller
         $contact = Contact::findOrFail($id);
         // Thực hiện xử lý với thông tin liên hệ
         // ...
+        if ($contact) {
+            // Xóa contact
+            $contact->delete();
+    
+            // Chuyển hướng đến trang khác với thông báo thành công
+            return redirect()->route('contacts.index')->with('success', 'Thông tin đã được xử lý thành công.');
+        }
 
-        return redirect()->route('contacts.index')->with('success', 'Thông tin đã được xử lý thành công!');
     }
 }

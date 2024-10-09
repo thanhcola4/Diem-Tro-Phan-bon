@@ -38,7 +38,7 @@
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{ url('user-management') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                <i style="font-size: 1rem;" class="fas fa-lg fa-user ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Quản lý nhân viên</span>
         </a>
@@ -47,7 +47,7 @@
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('contract') ? 'active' : '') }}" href="{{ url('contract') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                <i style="font-size: 1rem;" class="fas fa-lg fa-phone-volume ps-2 pe-2 text-center text-dark {{ (Request::is('contract') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Quản lý thông tin liên hệ</span>
         </a>
@@ -55,15 +55,15 @@
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('services') ? 'active' : '') }}" href="{{ url('services') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                <i style="font-size: 1rem;" class="fas fa-lg fa-cart-shopping ps-2 pe-2 text-center {{ (Request::is('services') ? 'text-white' : 'text-dark') }}" aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Quản lý sản phẩm</span>
         </a>
-      </li>
+    </li>
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('new') ? 'active' : '') }}" href="{{ url('new') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                <i style="font-size: 1rem;" class="fas fa-lg fa-newspaper ps-2 pe-2 text-center text-dark {{ (Request::is('new') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Quản lý tin tức</span>
         </a>
@@ -71,7 +71,7 @@
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('contacts') ? 'active' : '') }}" href="{{ url('contacts') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                <i style="font-size: 1rem;" class="fas fa-lg fa-apple-whole ps-2 pe-2 text-center text-dark {{ (Request::is('contacts') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Quản lý đặt hàng</span>
         </a>
@@ -79,7 +79,7 @@
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('reviews') ? 'active' : '') }}" href="{{ url('reviews') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i style="font-size: 1rem;" class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ (Request::is('user-management') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
+                <i style="font-size: 1rem;" class="fas fa-lg fa-house ps-2 pe-2 text-center text-dark {{ (Request::is('reviews') ? 'text-white' : 'text-dark') }} " aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Quản lý phản hồi</span>
         </a>
