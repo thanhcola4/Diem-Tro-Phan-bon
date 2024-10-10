@@ -12,7 +12,8 @@
     </ul>
     <form action="{{ route('contacts.process', $contact->id) }}" method="POST">
         @csrf
-        <button type="submit" class="btn btn-success">Xử lý Thông Tin</button>
+        <button type="submit" name="status" value="success" class="btn btn-success">Xử lý Thành Công</button>
+        <button type="submit" name="status" value="cancel" class="btn btn-danger">Hủy</button>
     </form>
 </div>
 @endsection

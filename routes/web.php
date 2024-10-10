@@ -81,6 +81,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
 	Route::post('/contacts/process/{id}', [ContactController::class, 'process'])->name('contacts.process');
 	Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+	Route::get('/contacts/update-status/{id}/{status}', [ContactController::class, 'updateStatus'])->name('contacts.updateStatus');
+
 
 
 

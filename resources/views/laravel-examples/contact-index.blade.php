@@ -34,8 +34,16 @@
                     <td>{{ $contact->company }}</td>
                     <td>{{ $contact->content }}</td>
                     <td>
+                    @if($contact->status == 'đang xử lý')
+                            <span class="badge bg-warning">Đang Xử Lý</span>
+                        @elseif($contact->status == 'đã hủy')
+                            <span class="badge bg-danger">Đã Hủy</span>
+                        @else
+                            <span class="badge bg-success">Đã Xử Lý</span>
+                        @endif
                         <a href="{{ route('contacts.show', $contact->id) }}" class="btn btn-info">Xem</a>
                     </td>
+                   
                 </tr>
             @endforeach
         </tbody>
